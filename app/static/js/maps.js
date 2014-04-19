@@ -5,7 +5,7 @@ var oldMarkersArray = [];
 function initialize() {
 
         var count = 0;
-        var seconds = 7;
+        var seconds = 3;
 
         var mapOptions = {
           center: new google.maps.LatLng(49.286083, -123.117117),
@@ -55,8 +55,8 @@ function getMarkerLocations(){
         }
 
         for (var i=0; i<oldMarkersArray.length; i++){
-//            oldMarkersArray[i].setMap(null);
-            console.log('-');
+            oldMarkersArray[i].setMap(null);
+//            console.log('-');
 
         }
 
@@ -72,11 +72,9 @@ function addMarker(location) {
     var marker = new google.maps.Marker(
         {
             position: pos,
-            map: map,
-            icon: {
-                 path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
-                scale: 2
-    }
+//            icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW, scale: 2},
+            map: map
+
         });
 
     newMarkersArray.push(marker);
