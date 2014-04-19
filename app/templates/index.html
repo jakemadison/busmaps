@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <title>bus map</title>
+      <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script src="../static/js/maps.js"></script>
+    <link href="../static/css/main.css" rel="stylesheet">
+      <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}
+        route = {{g.route}}
+        stopNumber = {{g.stopNumber}}
+//        allstops = {{g.allstops}}
+    </script>
+
+
+
+  </head>
+
+  <body>
+      <h1>Hello, Bus!</h1>
+      <div id="content">Counter: <span id="counter">0</span> Bus: {{g.route}} Stop: {{g.stopNumber}}</div>
+
+      <div id="map-canvas"></div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+
+  </body>
+
+<script type="text/javascript">
+          window.onload = initialize();
+      </script>
+</html>
+
