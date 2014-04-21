@@ -17,6 +17,7 @@ def get_bus_loc(route, stop, allstops=False):
             params['routeNo'] = route
 
     url = url_root+branch
+
     params['apikey'] = api_key
 
     headers = {'accept': 'application/json'}

@@ -10,6 +10,7 @@ import grab_data
 def index(route=99):
     g.route = route
     g.stopNumber = 0
+    g.allstops = False
     return render_template("index.html")
 
 @app.route('/stop/')
@@ -17,12 +18,13 @@ def index(route=99):
 def get_stop(stop=51195):
     g.route = 0
     g.stopNumber = stop
+    g.allstops = False
     return render_template("index.html")
 
 
 @app.route('/all')
 def all_busses():
-    g.all = True
+    g.allstops = True
     g.route = 0
     g.stopNumber = 0
     return render_template("index.html")
